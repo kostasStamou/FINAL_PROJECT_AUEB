@@ -1,0 +1,3 @@
+[submodule "FINAL-PROJECT/FRONT-END/recipes-app"]
+	path = FINAL-PROJECT/FRONT-END/recipes-app
+	url = https://github.com/hountasioannis/recipes-app

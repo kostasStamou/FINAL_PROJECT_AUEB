@@ -1,0 +1,25 @@
+<div class="container mt-5 mb-5">
+  <div *ngIf="postStatus === 201" class="alert alert-success">
+    Post deleted successfully!
+    <button class="btn btn-primary" (click)="navigateToPosts()">Go to Posts</button>
+  </div>
+  
+  <div *ngIf="postStatus === -1" class="alert alert-danger">
+    Something went wrong while deleting the post.
+    <button class="btn btn-primary" (click)="navigateToPosts()">Go to Posts</button>
+  </div>
+<div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-3" *ngFor="let post of posts">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{post.name}}</h5>
+          <p class="card-text">{{post.message}}</p>
+          <button class="btn btn-danger" (click)="deletePost(post)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  

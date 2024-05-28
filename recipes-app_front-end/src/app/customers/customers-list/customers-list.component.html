@@ -1,0 +1,15 @@
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-3" *ngFor="let customer of customers">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{customer.email}}</h5>
+            <p class="card-text">{{customer.lastname}}</p>
+            <p class="card-text">{{customer.firstname}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

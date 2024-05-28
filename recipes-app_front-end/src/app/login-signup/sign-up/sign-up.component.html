@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8">
+      <h1>Here you can input your values!! After that, if you are valid, you can login</h1>
+    </div>
+    <div class="col-lg-4">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="float-right">
+        <div class="form-group mt-3">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName" formControlName="firstName" placeholder="Enter your first name">
+        </div>
+        <div class="form-group mt-3">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" id="lastName" formControlName="lastName" placeholder="Enter your last name">
+        </div>
+        <div class="form-group mt-3">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group mt-3">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" formControlName="password" placeholder="Enter your password">
+        </div>
+        <div class="form-group mt-3">
+          <button type="submit" class="btn btn-primary" [disabled]="signupForm.invalid">Sign Up</button>
+          <a type="button" class="btn btn-link" routerLink="">Back</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

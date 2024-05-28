@@ -1,0 +1,18 @@
+<div  class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-3" *ngFor="let recipe of recipes">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ recipe.title }}</h5>
+            <p class="card-text">{{ recipe.ingredients }}</p>
+            <p class="card-text">{{ recipe.description }}</p>
+            <p class="card-text">{{ recipe.duration }} minutes</p>
+            <button class="btn btn-primary" (click)="addFavorite(recipe)">Add to favorites</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  

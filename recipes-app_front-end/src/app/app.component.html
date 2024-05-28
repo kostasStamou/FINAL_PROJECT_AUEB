@@ -1,0 +1,58 @@
+<div  class="container mt-4">
+    <div *ngIf="role === 'ADMIN' || role === 'USER'" class="row">
+      <div class="col">
+        <nav class="p-2 navbar navbar-expand-lg navbar-light bg-light">
+          <span class="navbar-brand">
+            <strong>
+              <a href="#" routerLink="/post" class="text-decoration-none text-black">{{ title }}</a>
+            </strong>
+          </span>
+  
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li *ngIf="role === 'USER'" class="nav-item">
+                <app-menu [dropdownLabel]="'Customers'" [items]="customersMenuForCustomer"></app-menu>
+              </li>
+              <li *ngIf="role === 'ADMIN'" class="nav-item">
+                <app-menu [dropdownLabel]="'Customers'" [items]="customersMenuForAdmin"></app-menu>
+              </li>
+              <li *ngIf="role === 'USER'" class="nav-item">
+                <app-menu [dropdownLabel]="'Recipes'" [items]="recipesMenuForCustomer"></app-menu>
+              </li>
+              <li *ngIf="role === 'ADMIN'" class="nav-item">
+                <app-menu [dropdownLabel]="'Recipes'" [items]="recipesMenuForAdmin"></app-menu>
+              </li>
+              <li *ngIf="role === 'USER'" class="nav-item">
+                <app-menu [dropdownLabel]="'Posts'" [items]="postsMenuForCustomer"></app-menu>
+              </li>
+              <li *ngIf="role === 'ADMIN'" class="nav-item">
+                <app-menu [dropdownLabel]="'Posts'" [items]="postsMenuForAdmin"></app-menu>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div *ngIf="true" class="col-auto">
+        <button class="btn btn-primary" (click)="logOut()" routerLink="">Logout</button>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  
+    <div class="row mt-10">
+      <div class="col">
+        <div class="fixed-bottom bg-dark text-white text-center py-2">
+          <p class="m-0">Copyright ©Stamou Konstantinos. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
